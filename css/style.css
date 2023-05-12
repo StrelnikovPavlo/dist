@@ -262,9 +262,7 @@ textarea {
 
 .input {
   display: block;
-  min-height: 53px;
   border: 1px solid #141414;
-  font-size: 16px;
   color: #141414;
   text-transform: uppercase;
   outline: none;
@@ -273,31 +271,26 @@ textarea {
 }
 
 .input::-webkit-input-placeholder {
-  font-size: 16px;
   color: #141414;
   position: relative;
 }
 
 .input::-moz-placeholder {
-  font-size: 16px;
   color: #141414;
   position: relative;
 }
 
 .input:-ms-input-placeholder {
-  font-size: 16px;
   color: #141414;
   position: relative;
 }
 
 .input::-ms-input-placeholder {
-  font-size: 16px;
   color: #141414;
   position: relative;
 }
 
 .input::placeholder {
-  font-size: 16px;
   color: #141414;
   position: relative;
 }
@@ -358,7 +351,8 @@ input::-webkit-inner-spin-button {
 
 textarea.input {
   resize: vertical;
-  padding: 12px 19px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   min-height: 143px;
 }
 
@@ -712,7 +706,6 @@ body::after {
   padding: 0 44px;
   min-height: 59px;
   text-transform: uppercase;
-  font-size: 24px;
   line-height: 1.4166666667;
 }
 
@@ -744,8 +737,6 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 53px;
-  font-size: 16px;
   color: #141414;
   text-transform: uppercase;
   gap: 0.625rem;
@@ -2893,11 +2884,47 @@ body::after {
 
 @media (min-width: 97.5em) {
   .input {
+    min-height: 3.3125rem;
+  }
+
+  .input {
     padding-left: 1.25rem;
   }
 
   .input {
     padding-right: 1.25rem;
+  }
+
+  .input {
+    font-size: 1rem;
+  }
+
+  .input::-webkit-input-placeholder {
+    font-size: 1rem;
+  }
+
+  .input::-moz-placeholder {
+    font-size: 1rem;
+  }
+
+  .input:-ms-input-placeholder {
+    font-size: 1rem;
+  }
+
+  .input::-ms-input-placeholder {
+    font-size: 1rem;
+  }
+
+  .input::placeholder {
+    font-size: 1rem;
+  }
+
+  textarea.input {
+    padding-left: 1.1875rem;
+  }
+
+  textarea.input {
+    padding-right: 1.1875rem;
   }
 
   .popup__close {
@@ -2938,6 +2965,22 @@ body::after {
 
   .order-print__title {
     font-size: 4rem;
+  }
+
+  .order-print__button {
+    min-height: 3.6875rem;
+  }
+
+  .order-print__button {
+    font-size: 1.5rem;
+  }
+
+  .order-print .select__value {
+    min-height: 3.3125rem;
+  }
+
+  .order-print .select__value {
+    font-size: 1rem;
   }
 
   .order-print .select__value {
@@ -3776,6 +3819,10 @@ body::after {
 }
 
 @media (max-width: 600px) {
+  .popup__content {
+    width: 95% !important;
+  }
+
   .block-printing__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -3823,10 +3870,46 @@ body::after {
 
 @media (max-width: 20em) {
   .input {
+    min-height: 2.5rem;
+  }
+
+  .input {
     padding-left: 0.625rem;
   }
 
   .input {
+    padding-right: 0.625rem;
+  }
+
+  .input {
+    font-size: 0.8125rem;
+  }
+
+  .input::-webkit-input-placeholder {
+    font-size: 0.8125rem;
+  }
+
+  .input::-moz-placeholder {
+    font-size: 0.8125rem;
+  }
+
+  .input:-ms-input-placeholder {
+    font-size: 0.8125rem;
+  }
+
+  .input::-ms-input-placeholder {
+    font-size: 0.8125rem;
+  }
+
+  .input::placeholder {
+    font-size: 0.8125rem;
+  }
+
+  textarea.input {
+    padding-left: 0.625rem;
+  }
+
+  textarea.input {
     padding-right: 0.625rem;
   }
 
@@ -3868,6 +3951,22 @@ body::after {
 
   .order-print__title {
     font-size: 1.5625rem;
+  }
+
+  .order-print__button {
+    min-height: 2.8125rem;
+  }
+
+  .order-print__button {
+    font-size: 1.125rem;
+  }
+
+  .order-print .select__value {
+    min-height: 2.5rem;
+  }
+
+  .order-print .select__value {
+    font-size: 0.8125rem;
   }
 
   .order-print .select__value {
@@ -4424,6 +4523,18 @@ body::after {
 }
 
 @media (min-width: 20em) and (max-width: 97.5em) {
+@supports (min-height: clamp( 2.5rem , 2.2903225806rem  +  1.0483870968vw , 3.3125rem )) {
+    .input {
+      min-height: clamp( 2.5rem , 2.2903225806rem  +  1.0483870968vw , 3.3125rem );
+    }
+}
+
+@supports not (min-height: clamp( 2.5rem , 2.2903225806rem  +  1.0483870968vw , 3.3125rem )) {
+    .input {
+      min-height: calc(2.5rem + 0.8125 * (100vw - 20rem) / 77.5);
+    }
+}
+
 @supports (padding-left: clamp( 0.625rem , 0.4637096774rem  +  0.8064516129vw , 1.25rem )) {
     .input {
       padding-left: clamp( 0.625rem , 0.4637096774rem  +  0.8064516129vw , 1.25rem );
@@ -4445,6 +4556,78 @@ body::after {
 @supports not (padding-right: clamp( 0.625rem , 0.4637096774rem  +  0.8064516129vw , 1.25rem )) {
     .input {
       padding-right: calc(0.625rem + 0.625 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem )) {
+    .input {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem )) {
+    .input {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem )) {
+    .input::-webkit-input-placeholder {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+    .input::-moz-placeholder {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+    .input:-ms-input-placeholder {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+    .input::-ms-input-placeholder {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+    .input::placeholder {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem )) {
+    .input::-webkit-input-placeholder {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
+    }
+    .input::-moz-placeholder {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
+    }
+    .input:-ms-input-placeholder {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
+    }
+    .input::-ms-input-placeholder {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
+    }
+    .input::placeholder {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (padding-left: clamp( 0.625rem , 0.4798387097rem  +  0.7258064516vw , 1.1875rem )) {
+    textarea.input {
+      padding-left: clamp( 0.625rem , 0.4798387097rem  +  0.7258064516vw , 1.1875rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.625rem , 0.4798387097rem  +  0.7258064516vw , 1.1875rem )) {
+    textarea.input {
+      padding-left: calc(0.625rem + 0.5625 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (padding-right: clamp( 0.625rem , 0.4798387097rem  +  0.7258064516vw , 1.1875rem )) {
+    textarea.input {
+      padding-right: clamp( 0.625rem , 0.4798387097rem  +  0.7258064516vw , 1.1875rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.625rem , 0.4798387097rem  +  0.7258064516vw , 1.1875rem )) {
+    textarea.input {
+      padding-right: calc(0.625rem + 0.5625 * (100vw - 20rem) / 77.5);
     }
 }
 
@@ -4565,6 +4748,54 @@ body::after {
 @supports not (font-size: clamp( 1.5625rem , 0.9334677419rem  +  3.1451612903vw , 4rem )) {
     .order-print__title {
       font-size: calc(1.5625rem + 2.4375 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (min-height: clamp( 2.8125rem , 2.5866935484rem  +  1.1290322581vw , 3.6875rem )) {
+    .order-print__button {
+      min-height: clamp( 2.8125rem , 2.5866935484rem  +  1.1290322581vw , 3.6875rem );
+    }
+}
+
+@supports not (min-height: clamp( 2.8125rem , 2.5866935484rem  +  1.1290322581vw , 3.6875rem )) {
+    .order-print__button {
+      min-height: calc(2.8125rem + 0.875 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (font-size: clamp( 1.125rem , 1.0282258065rem  +  0.4838709677vw , 1.5rem )) {
+    .order-print__button {
+      font-size: clamp( 1.125rem , 1.0282258065rem  +  0.4838709677vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.125rem , 1.0282258065rem  +  0.4838709677vw , 1.5rem )) {
+    .order-print__button {
+      font-size: calc(1.125rem + 0.375 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (min-height: clamp( 2.5rem , 2.2903225806rem  +  1.0483870968vw , 3.3125rem )) {
+    .order-print .select__value {
+      min-height: clamp( 2.5rem , 2.2903225806rem  +  1.0483870968vw , 3.3125rem );
+    }
+}
+
+@supports not (min-height: clamp( 2.5rem , 2.2903225806rem  +  1.0483870968vw , 3.3125rem )) {
+    .order-print .select__value {
+      min-height: calc(2.5rem + 0.8125 * (100vw - 20rem) / 77.5);
+    }
+}
+
+@supports (font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem )) {
+    .order-print .select__value {
+      font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.8125rem , 0.7641129032rem  +  0.2419354839vw , 1rem )) {
+    .order-print .select__value {
+      font-size: calc(0.8125rem + 0.1875 * (100vw - 20rem) / 77.5);
     }
 }
 
